@@ -9,6 +9,11 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    public function messages()
+    {
+        return $this->belongsToMany('App\Message')->withTimestamps();
+    }
+
     /**
      * The attributes that are mass assignable.
      *

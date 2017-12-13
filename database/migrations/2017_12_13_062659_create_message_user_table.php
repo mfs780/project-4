@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBuzzMessagesTable extends Migration
+class CreateMessageUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,15 @@ class CreateBuzzMessagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('buzz_messages', function (Blueprint $table) {
+        Schema::create('message_user', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('message');
-            $table->string('tags');
-            $table->string('mentions');
             $table->timestamps();
+
+            $table->integer('message_id')->unsigned();
+            $table->integer('user_id')->unsigned();
+
+            $table->foreign('message_id')->references('id')->on('messages');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -29,6 +32,6 @@ class CreateBuzzMessagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('buzz_messages');
+        Schema::dropIfExists('message_user');
     }
 }
