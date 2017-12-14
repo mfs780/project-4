@@ -90,8 +90,6 @@
           <p class='message-user'>@<span>{{ $message['user']['name'] }}</span> </p>
 
           <p class='message-date'>{{ $message['created_at'] }}</p>
-
-          <i class='fa fa-edit'></i>
         </div>
         
         <div class='message-body'>
