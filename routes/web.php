@@ -24,12 +24,18 @@ Route::group(['middleware' => 'auth'], function () {
     # Main Tweet Page
     Route::get('/session', 'BuzzController@session');
     Route::post('/tweet', 'BuzzController@tweet');
+
+    # Edit TWeet
+    Route::get('/tweet/{id}', 'BuzzController@edit');
+    Route::put('/tweet/{id}', 'BuzzController@update');
+
+    # Delete Tweet
+    Route::delete('/tweet/{id}', 'BuzzController@delete');
 });
 
 // /**
 // * Homepage
 // */
-// Route::get('/', 'WelcomeController');
 Route::get('/', 'BuzzController@index');
 
 Auth::routes();
