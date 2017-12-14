@@ -28,9 +28,9 @@
           <h1>Buzz Micro Social Network</h1>
         </header>
 
-        <section id="main">
+        <div id="main">
           @yield('content')
-        </section>
+        </div>
 
         <footer>
           <a href='https://github.com/mfs780/project-4'><i class='fa fa-github'></i></a>&nbsp;
