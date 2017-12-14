@@ -17,27 +17,26 @@
         @stack('head')
     </head>
     <body>
-
         @if(session('alert'))
-          <div class="alert">
-            {{ session('alert') }}
-          </div>
+            <div class="alert">
+                {{ session('alert') }}
+            </div>
         @endif
 
         <header>
-          <h1>Buzz Micro Social Network</h1>
+            <h1>Buzz Micro Social Network</h1>
         </header>
 
         <div id="main">
-          @yield('content')
+            @yield('content')
         </div>
 
         <footer>
-          <a href='https://github.com/mfs780/project-4'><i class='fa fa-github'></i></a>&nbsp;
-          &copy; {{ date('Y') }}
+            <a href='https://github.com/mfs780/project-4'><i class='fa fa-github'></i></a>&nbsp;
+            &copy; {{ date('Y') }}
         </footer>
 
         <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-        @stack('body')
+            @stack('body')
     </body>
 </html>
